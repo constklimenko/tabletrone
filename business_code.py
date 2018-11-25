@@ -22,8 +22,19 @@ class TimeTable(object):
     группах и преподавателях.
     """
 
-    def __init__(self, GroupList, TeachersList, HoursInDay):
+    def __init__(self, GroupsList, TeachersList, HoursInDay):
         """ initiation with an empty 3D table."""
+        self.groupsList = GroupsList
+        self.teachersList = TeachersList
+
+        self.table = [[[
+                      0
+                      for _ in range(GroupsList.len)]
+                      for _ in range(TeachersList.len)]
+                      for _ in range(HoursInDay.summHours)]
+
+    def fillTable(self):
+        # заполняет таблицу на основе уже внесенных данных
         pass
 
 
@@ -43,7 +54,7 @@ class StudyGroup(SchoolUnit):
 
 
 class HoursInDay(object):
-    """docstring for ."""
+    u"""Keep information about number of lessons per day."""
     def __init__(self,
                  monday=5,
                  tuesday=5,
@@ -60,11 +71,13 @@ class HoursInDay(object):
 
 class TeachersList(list):
     u"""Keep information about teachers ."""
-    def __init__(self, teachers):
-        pass
+    def __init__(self, *teachers):
+        self.list = teachers
+        self.len = len(self.list)
 
 
 class GroupsList(object):
     u"""Keep information about study groups."""
-    def __init__(self, groups):
-        pass
+    def __init__(self, *groups):
+        self.list = groups
+        self.len = len(self.list)
