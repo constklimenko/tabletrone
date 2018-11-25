@@ -42,6 +42,22 @@ class StudyGroup(SchoolUnit):
     pass
 
 
+class HoursInDay(object):
+    """docstring for ."""
+    def __init__(self,
+                 monday=5,
+                 tuesday=5,
+                 wednesday=5,
+                 thursday=5,
+                 friday=5,
+                 saturday=0,
+                 sunday=0):
+        self.list = [monday, tuesday, wednesday,
+                     thursday, friday, saturday, sunday]
+        self.summHours = (monday + tuesday + wednesday +
+                          thursday + friday + saturday + sunday)
+
+
 class TeachersList(list):
     u"""Keep information about teachers ."""
     def __init__(self, teachers):
@@ -49,6 +65,6 @@ class TeachersList(list):
 
 
 class GroupsList(object):
-    u"""docstring for ."""
+    u"""Keep information about study groups."""
     def __init__(self, groups):
         pass
