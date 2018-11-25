@@ -17,7 +17,7 @@ E-mail: Narcomacer@gmail.com
 
 
 class TimeTable(object):
-    u"""Keep information about time, number of lessons and teachers.
+    u"""Keeps information about time, number of lessons and teachers.
     Содержит сведения о времени занятий, их числе ,
     группах и преподавателях.
     """
