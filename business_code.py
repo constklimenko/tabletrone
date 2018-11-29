@@ -34,6 +34,20 @@ class TimeTable(object):
                       for _ in range(TeachersList.len)]
                       for _ in range(HoursInDay.summHours)]
 
+        TeachersDictionary = {} # словарь соответствия  имени преподавателя
+                                # и номера столбца расписания
+
+        for i in range(len(TeachersList)):
+            TeachersDictionary[TeachersList[i].name] = i
+
+        GroupsDictionary = {} # словарь соответствия  номера группы
+                              # и номера столбца расписания
+
+        for i in range(len(GroupsList)):
+            GroupsDictionary[GroupsList[i].name] = i
+
+
+
     def fillTable(self):
         # заполняет таблицу на основе уже внесенных данных
         pass
@@ -46,6 +60,7 @@ class TimeTable(object):
          lesson,
           2 - lesson is not possible, 3 - is a lesson every two weeks)"""
         pass
+
 
     def getCellByGroup(time, GroupNumber):
         # ищет в расписании у какого преподавателя занимается группа.
@@ -64,10 +79,12 @@ class SchoolUnit(object):
 
 
 class Teacher(SchoolUnit):
+    # TeacherName
     pass
 
 
 class StudyGroup(SchoolUnit):
+    # GroupNumber
     pass
 
 
