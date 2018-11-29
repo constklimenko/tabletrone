@@ -18,6 +18,7 @@ E-mail: Narcomacer@gmail.com
 
 class TimeTable(object):
     u"""Keeps information about time, number of lessons and teachers.
+
     Содержит сведения о времени занятий, их числе ,
     группах и преподавателях.
     """
@@ -35,6 +36,23 @@ class TimeTable(object):
 
     def fillTable(self):
         # заполняет таблицу на основе уже внесенных данных
+        pass
+
+    def getCellStatus(time, GroupNumber, TeacherName):
+        u"""Проверяет статус ячейки расписания (0 -пуста, 1 - есть занятие,
+         2 - невозможно, 3 - занятие раз в две недели )
+
+         Checks the status of the schedule cell (0 - empty, 1 - there is an
+         lesson,
+          2 - lesson is not possible, 3 - is a lesson every two weeks)"""
+        pass
+
+    def getCellByGroup(time, GroupNumber):
+        # ищет в расписании у какого преподавателя занимается группа.
+        pass
+
+    def getCellByTeacher(time, TeacherName):
+        # ищет в расписании у какой группы в данное время преподаватель.
         pass
 
 
@@ -81,3 +99,6 @@ class GroupsList(object):
     def __init__(self, *groups):
         self.list = groups
         self.len = len(self.list)
+
+
+# Unit-testing
